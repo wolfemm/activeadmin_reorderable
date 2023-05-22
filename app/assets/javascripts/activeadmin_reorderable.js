@@ -48,9 +48,9 @@ $.fn.reorderable = function (opts) {
     var bottom_id = $row.next().find('.reorder-handle').data("reorderId")
 
     $.post(url, {
-      position: index($row),
+      position: index($row) + ~~$handle.data('reorderOffset'),
       top_id: top_id,
-      bottom_id: bottom_id 
+      bottom_id: bottom_id
     });
   }
 
